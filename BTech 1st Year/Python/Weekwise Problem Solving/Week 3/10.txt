@@ -1,0 +1,45 @@
+# Get radius as input
+radius = float(input("Enter the radius of the circle: "))
+
+# Calculate area of the entire circle using an approximation of pi
+pi_approx = 3.14159
+area_circle = pi_approx * radius * radius
+
+# Calculate area of the red section (quarter circle)
+area_red = area_circle / 4
+
+# Calculate area of the remaining three-quarters
+area_remaining = area_circle - area_red
+
+# Calculate area of the blue section (one-third of the remaining)
+area_blue = area_remaining / 3
+
+# Calculate area of the yellow section (rest)
+area_yellow = area_remaining - area_blue
+
+# Calculate perimeter of the red section
+perimeter_red = (pi_approx * radius) / 2 + 2 * radius
+
+# Calculate perimeter of the blue section
+# First, calculate the angle of the blue sector
+angle_blue = (360 * area_blue) / area_circle
+# Then, calculate the arc length
+arc_length_blue = (angle_blue / 360) * 2 * pi_approx * radius
+# Finally, calculate the perimeter
+perimeter_blue = arc_length_blue + 2 * radius
+
+# Calculate perimeter of the yellow section
+# First, calculate the angle of the yellow sector
+angle_yellow = (360 * area_yellow) / area_circle
+# Then, calculate the arc length
+arc_length_yellow = (angle_yellow / 360) * 2 * pi_approx * radius
+# Finally, calculate the perimeter
+perimeter_yellow = arc_length_yellow + 2 * radius
+
+# Print the results
+print("Area of red section:", area_red)
+print("Perimeter of red section:", perimeter_red)
+print("Area of blue section:", area_blue)
+print("Perimeter of blue section:", perimeter_blue)
+print("Area of yellow section:", area_yellow)
+print("Perimeter of yellow section:", perimeter_yellow)
